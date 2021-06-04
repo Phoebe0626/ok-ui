@@ -10,7 +10,7 @@ npm i @phoebe0626/ok-ui
 ```javascript
 import Vue from 'vue'
 import App from 'components/app.vue'
-import OkUI from 'ok-ui';
+import OkUI from '@phoebe0626/ok-ui';
 Vue.use(OkUI);
 new Vue({
   el: '#app',
