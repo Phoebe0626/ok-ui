@@ -17,3 +17,9 @@ new Vue({
   render: h => h(App)
 })
 ```
+
+## 特别提示
+样式文件需要单独引入
+```javascript
+import '@phoebe0626/ok-ui/dist/ok-ui.css'
+```
