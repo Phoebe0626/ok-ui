@@ -41,6 +41,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.theme-default-content:not(.custom) a:hover {
+  text-decoration: none;
+}
 .o-link {
   display: inline-flex;
   flex-direction: row;
