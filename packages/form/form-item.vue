@@ -1,7 +1,7 @@
 <template>
   <div class="o-form-item">
     <label class="o-form-item__label" :style="{width: Form.labelWidth}">{{ label }}</label>
-    <div class="o-form-item__content">
+    <div class="o-form-item__content" :style="{marginLeft: Form.labelWidth}">
       <slot></slot>
     </div>
   </div>

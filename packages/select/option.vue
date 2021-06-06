@@ -32,9 +32,9 @@ export default {
   },
   methods: {
     handleOption () {
-      if(this.disabled) return
-      // this.Select.value = this.value
+      if (this.disabled) return
       this.Select.$emit('input', this.value)
+      this.Select.isShow = false
     }
   }
 }

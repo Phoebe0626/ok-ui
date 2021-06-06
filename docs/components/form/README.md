@@ -813,3 +813,128 @@ export default {
 
 
 ## Form 表单
+
+<font size="2" color="#5e6d82">由输入框、选择器、单选框、多选框等控件组成，用以收集、校验、提交数据。</font>
+
+<h3>典型表单</h3>
+
+<font size="2" color="#5e6d82">包括各种表单项，比如输入框、选择器、开关、单选框、多选框等。</font>
+
+<ClientOnly>
+  <form-demo-1 />
+</ClientOnly>
+
+> 在 Form 组件中，每一个表单域由一个 Form-Item 组件构成，表单域中可以放置各种类型的表单控件，包括 Input、Select、Checkbox、Radio、Switch、DatePicker、TimePicker
+
+::: details 点击查看代码
+```vue
+<template>
+  <o-form ref="form" :model="form" label-width="80px">
+    <o-form-item label="活动名称">
+      <o-input v-model="form.name"></o-input>
+    </o-form-item>
+    <o-form-item label="活动区域">
+      <o-select v-model="form.region" placeholder="请选择活动区域">
+        <o-option label="区域一" value="shanghai"></o-option>
+        <o-option label="区域二" value="beijing"></o-option>
+      </o-select>
+    </o-form-item>
+    <o-form-item label="即时配送">
+      <o-switch v-model="form.delivery"></o-switch>
+    </o-form-item>
+    <o-form-item label="活动性质">
+      <o-checkbox-group v-model="form.type">
+        <o-checkbox label="美食/餐厅线上活动" name="type"></o-checkbox>
+        <o-checkbox label="地推活动" name="type"></o-checkbox>
+        <o-checkbox label="线下主题活动" name="type"></o-checkbox>
+        <o-checkbox label="单纯品牌曝光" name="type"></o-checkbox>
+      </o-checkbox-group>
+    </o-form-item>
+    <o-form-item label="特殊资源">
+      <o-radio-group v-model="form.resource">
+        <o-radio label="线上品牌商赞助"></o-radio>
+        <o-radio label="线下场地免费"></o-radio>
+      </o-radio-group>
+    </o-form-item>
+    <o-form-item>
+      <o-button type="primary" @click="onSubmit">立即创建</o-button>
+      <o-button>取消</o-button>
+    </o-form-item>
+  </o-form>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        form: {
+          name: '',
+          region: '',
+          delivery: false,
+          type: [],
+          resource: ''
+        }
+      }
+    },
+    methods: {
+      onSubmit() {
+        console.log('submit!');
+      }
+    }
+  }
+</script>
+```
+:::
+
+<h3>Form Attributes</h3>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="150px">参数</th>
+      <th width="150px">说明</th>
+      <th width="150px">类型</th>
+      <th width="150px">可选值</th>
+      <th width="140px">默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>model</td>
+      <td>表单数据对象</td>
+      <td>object</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>label-width</td>
+      <td>表单域标签的宽度</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Form-Item Attributes</h3>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="150px">参数</th>
+      <th width="150px">说明</th>
+      <th width="150px">类型</th>
+      <th width="150px">可选值</th>
+      <th width="140px">默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>label</td>
+      <td>标签文本</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
