@@ -17,6 +17,8 @@
 ```
 :::
 
+
+
 ## Button 按钮
 <font size="2" color="#5e6d82">常用的操作按钮。</font>
 
@@ -112,6 +114,69 @@
 ```
 :::
 
+<table width="100%">
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td width="16%">type</td>
+      <td width="16%">类型</td>
+      <td width="16%">string</td>
+      <td>primary / success / warning / danger / info / text</td>
+      <td width="16%">default</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用状态</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>ghost</td>
+      <td>是否是幽灵按钮</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>round</td>
+      <td>是否圆角按钮</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>circle</td>
+      <td>是否圆形按钮</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>circle</td>
+      <td>是否圆形按钮</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>icon</td>
+      <td>图标类名</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Link 文字链接
 <font size="2" color="#5e6d82">文字超链接。</font>
 
@@ -175,3 +240,45 @@
 <o-link :underline="false" type="info">信息链接</o-link>
 ```
 :::
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>说明</th>
+      <th>类型</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td width="16%">type</td>
+      <td width="16%">类型</td>
+      <td width="16%">string</td>
+      <td>primary / success / warning / danger / info / text</td>
+      <td width="16%">default</td>
+    </tr>
+    <tr>
+      <td>underline</td>
+      <td>是否下划线</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用状态</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td>原生 href 属性</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
