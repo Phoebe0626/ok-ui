@@ -342,6 +342,8 @@ export default {
   <checkbox-demo-2 />
 </ClientOnly>
 
+> 设置 `diabled` 属性即可。
+
 ::: details 点击查看代码
 ```vue
 <template>
@@ -361,6 +363,84 @@ export default {
 </script>
 ```
 :::
+
+<h3>多选框组</h3>
+
+<font size="2" color="#5e6d82">适用于多个勾选框绑定到同一个数组的情景，通过是否勾选来表示这一组选项中选中的项。</font>
+
+> `checkbox-group` 元素能把多个 `checkbox` 管理为一组，只需要在 `Group` 中使用 `v-model` 绑定 `Array` 类型的变量即可。el-checkbox` 的 `label` 属性是该 `checkbox` 对应的值，若该标签中无内容，则该属性也充当 `checkbox` 按钮后的介绍。`label` 与数组中的元素值相对应，如果存在指定的值则为选中状态，否则为不选中。
+
+<ClientOnly>
+  <checkbox-demo-3 />
+</ClientOnly>
+
+::: details 点击查看代码
+```vue
+<template>
+  <o-checkbox-group v-model="checkList">
+    <o-checkbox label="复选框A">复选框 A</o-checkbox>
+    <o-checkbox label="复选框B">复选框 B</o-checkbox>
+    <o-checkbox label="复选框C">复选框 C</o-checkbox>
+    <o-checkbox label="禁用" disabled>禁用</o-checkbox>
+    <o-checkbox label="选中且禁用" disabled>选中且禁用</o-checkbox>
+  </o-checkbox-group>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      checkList: ['选中且禁用','复选框A']
+    }
+  }
+}
+</script>
+```
+:::
+
+<h3>Checkbox Attributes</h3>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="20%">参数</th>
+      <th width="22%">说明</th>
+      <th>类型</th>
+      <th width="20%">可选值</th>
+      <th width="20%">默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>value / v-model</td>
+      <td>绑定值</td>
+      <td>string / number / boolean</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>选中状态的值</td>
+      <td>string / number / boolean</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>原生的 name 属性</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Select 选择器
 

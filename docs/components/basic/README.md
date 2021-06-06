@@ -114,6 +114,8 @@
 ```
 :::
 
+<h3>Button Attributes</h3>
+
 <table width="100%">
   <thead>
     <tr>
@@ -240,6 +242,8 @@
 <o-link :underline="false" type="info">信息链接</o-link>
 ```
 :::
+
+<h3>Link Attributes</h3>
 
 <table width="100%">
   <thead>

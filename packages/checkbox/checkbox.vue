@@ -82,6 +82,9 @@ export default {
   -ms-user-select: none;
   user-select: none;
   margin-right: 30px;
+  &.is-disabled {
+    cursor: not-allowed;
+  }
   .o-checkbox__input {
     white-space: nowrap;
     outline: none;
