@@ -116,6 +116,64 @@ export default {
 ```
 :::
 
+<h3>Input Attributes</h3>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="120">参数</th>
+      <th width="140">说明</th>
+      <th width="280">类型</th>
+      <th width="100">可选值</th>
+      <th width="100">默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td>类型</td>
+      <td>string</td>
+      <td>text, password</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>value / v-model</td>
+      <td>绑定值</td>
+      <td>string / number</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>placeholder</td>
+      <td>输入框的占位文本</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>禁用</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>clearable</td>
+      <td>是否可清空</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>show-password</td>
+      <td>是否显示切换密码图标</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Radio 单选框
 <font size="2" color="#5e6d82">在一组备选项中进行单选</font>
 
@@ -206,6 +264,43 @@ export default {
 </script>
 ```
 :::
+
+<h3>Radio Attributes</h3>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="100">参数</th>
+      <th width="120">说明</th>
+      <th>类型</th>
+      <th width="100">可选值</th>
+      <th width="100">默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>value / v-model</td>
+      <td>绑定值</td>
+      <td>string / number / boolean</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>Radio 的 value</td>
+      <td>string / number / boolean</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
