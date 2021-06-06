@@ -306,6 +306,62 @@ export default {
 
 ## Checkbox 复选框
 
+<font size="2" color="#5e6d82">在一组备选项中进行多选</font>
+
+<h3>基础用法</h3>
+
+<font size="2" color="#5e6d82">单独使用可以表示两种状态之间的切换，写在标签中的内容为 checkbox 按钮后的介绍。</font>
+
+<ClientOnly>
+  <checkbox-demo-1 />
+</ClientOnly>
+
+::: details 点击查看代码
+```vue
+<template>
+  <o-checkbox v-model="checked">备选项</o-checkbox>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      checked: true
+    }
+  }
+}
+</script>
+```
+:::
+
+<h3>禁用状态</h3>
+
+<font size="2" color="#5e6d82">多选框不可用状态。</font>
+
+<ClientOnly>
+  <checkbox-demo-2 />
+</ClientOnly>
+
+::: details 点击查看代码
+```vue
+<template>
+  <o-checkbox v-model="checked1" disabled>备选项1</o-checkbox>
+  <o-checkbox v-model="checked2" disabled>备选项2</o-checkbox>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      checked1: false
+      checked2: true
+    }
+  }
+}
+</script>
+```
+:::
+
 ## Select 选择器
 
 ## Switch 开关

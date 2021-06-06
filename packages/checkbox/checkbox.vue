@@ -1,16 +1,17 @@
 <template>
-  <label class="o-checkbox" :class="{'is-checked': isChecked}">
+  <label class="o-checkbox" :class="{'is-checked': isChecked, 'is-disabled': disabled}">
     <span class="o-checkbox__input">
-      <span class="o-checkbox__inner"></span>
+      <span class="o-checkbox__inner" :class="{'is-disabled': disabled}"></span>
       <input
         type="checkbox"
         class="o-checkbox__original"
         :name="name"
         v-model="model"
         :value="label"
+        :disabled="disabled"
       >
     </span>
-    <span class="o-checkbox__label">
+    <span class="o-checkbox__label" :class="{'is-disabled': disabled}">
       <slot></slot>
       <template v-if="!$slots.default">{{ label }}</template>
     </span>
@@ -37,6 +38,10 @@ export default {
     name: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -95,6 +100,11 @@ export default {
       background-color: #fff;
       z-index: 1;
       transition: border-color .25s cubic-bezier(.71, -.46, .29, 1.46), background-color .25s cubic-bezier(.71, -.46, .29, 1.46);
+      &.is-disabled {
+        background-color: #f2f6fc;
+        border-color: #dcdfe6;
+        cursor: not-allowed;
+      }
       &:after {
         box-sizing: content-box;
         content: '';
@@ -126,6 +136,10 @@ export default {
     padding-left: 10px;
     line-height: 19px;
     font-size: 14px;
+    &.is-disabled {
+      color: #c0c4cc;
+      cursor: not-allowed;
+    }
   }
 }
 
@@ -137,10 +151,22 @@ export default {
       &::after {
         transform: rotate(45deg) scaleY(1);
       }
+      &.is-disabled {
+        background-color: #f2f6fc;
+        border-color: #dcdfe6;
+        cursor: not-allowed;
+        &::after {
+          border-color: #c0c4cc;
+        }
+      }
     }
   }
   .o-checkbox__label {
     color: #409eff;
+    &.is-disabled {
+      color: #c0c4cc;
+      cursor: not-allowed;
+    }
   }
 }
 </style>
