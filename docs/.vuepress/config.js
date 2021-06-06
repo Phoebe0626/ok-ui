@@ -4,6 +4,7 @@ module.exports = {
   base: '/ok-ui/',
   themeConfig: {
     displayAllHeaders: true,
+    smoothScroll: true,
     nav: [
       { text: '主页', link: '/' },
       { text: 'Github', link: 'https://github.com/Phoebe0626/ok-ui' }

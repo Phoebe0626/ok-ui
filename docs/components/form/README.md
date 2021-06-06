@@ -117,6 +117,97 @@ export default {
 :::
 
 ## Radio 单选框
+<font size="2" color="#5e6d82">在一组备选项中进行单选</font>
+
+<h3>基础用法</h3>
+
+<font size="2" color="#5e6d82">由于选项默认可见，不宜过多，若选项过多，建议使用 Select 选择器。</font>
+
+<ClientOnly>
+  <radio-demo-1 />
+</ClientOnly>
+
+::: details 点击查看代码
+```vue
+<template>
+  <o-radio v-model="radio" label="1">备选项</o-radio>
+  <o-radio v-model="radio" label="2">备选项</o-radio>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      radio: '1'
+    }
+  }
+}
+</script>
+```
+:::
+
+<h3>禁用状态</h3>
+
+<font size="2" color="#5e6d82">单选框不可用的状态。</font>
+
+<ClientOnly>
+  <radio-demo-2 />
+</ClientOnly>
+
+> 只要在 `o-radio` 元素中设置 `disabled` 属性即可，它接收一个 `Boolean`，`true` 为禁用。
+
+::: details 点击查看代码
+```vue
+<template>
+  <o-radio disabled v-model="radio" label="禁用">备选项</o-radio>
+  <o-radio disabled v-model="radio" label="选中且禁用">备选项</o-radio>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      radio: '选中且禁用'
+    }
+  }
+}
+</script>
+```
+:::
+
+<h3>单选框组</h3>
+
+<font size="2" color="#5e6d82">适用于在多个互斥的选项中选择的场景</font>
+
+<ClientOnly>
+  <radio-demo-3 />
+</ClientOnly>
+
+> 结合 `o-radio-group` 元素和子元素 `o-radio` 可以实现单选组，在 `o-radio-group` 中绑定 `v-model`，在 `o-radio` 中设置好 `label` 即可，无需再给每一个 `o-radio` 绑定变量。
+
+::: details 点击查看代码
+```vue
+<template>
+  <o-radio-group v-model="radio">
+    <o-radio label="3">备选项</o-radio>
+    <o-radio label="6">备选项</o-radio>
+    <o-radio label="9">备选项</o-radio>
+  </o-radio-group>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      radio: '3'
+    }
+  }
+}
+</script>
+```
+:::
+
+
 
 ## Checkbox 复选框
 
