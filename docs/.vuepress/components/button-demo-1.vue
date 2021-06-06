@@ -54,12 +54,3 @@ export default {
 }
 </script>
 
-<style scoped>
-.row {
-  margin-bottom: 16px;
-}
-.row:nth-child(2) {
-  padding: 10px;
-  background-color: rgb(190, 200, 200);
-}
-</style>

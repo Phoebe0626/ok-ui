@@ -1,10 +1,10 @@
 <template>
-  <label class="o-switch" :class="{'is-checked': value}">
+  <label class="o-switch" :class="{'is-checked': value, 'is-disabled': disabled}">
     <span :class="{'is-active': !value}" class="o-switch__label o-switch__label--left">{{ activeText }}</span>
     <span class="o-switch__core" ref="core">
       <div class="o-switch__button"></div>
     </span>
-    <input @change="handleSwitch" class="o-switch__input" type="checkbox" :name="name">
+    <input @change="handleSwitch" :disabled="disabled" class="o-switch__input" type="checkbox" :name="name">
     <span :class="{'is-active': value}" class="o-switch__label o-switch__label--right">{{ inactiveText }}</span>
   </label>
 </template>
@@ -36,6 +36,10 @@ export default {
     inactiveText: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {
@@ -129,6 +133,13 @@ export default {
     .o-switch__button {
       transform: translateX(20px);
     }
+  }
+}
+
+.o-switch.is-disabled {
+  opacity: .6;
+  .o-switch__core {
+    cursor: not-allowed;
   }
 }
 </style>

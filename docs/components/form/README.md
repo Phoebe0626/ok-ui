@@ -650,4 +650,101 @@ export default {
 
 ## Switch 开关
 
+<font size="2" color="#5e6d82">表示两种相互对立的状态间的切换，多用于触发「开/关」。</font>
+
+<h3>基本用法</h3>
+
+<ClientOnly>
+  <switch-demo-1 />
+</ClientOnly>
+
+> 绑定 `v-model` 到一个 `Boolean` 类型的变量。可以使用 `active-color` 属性与 `inactive-color` 属性来设置开关的背景色。
+
+::: details 点击查看代码
+```vue
+<template>
+  <el-switch
+    v-model="value"
+    active-color="#13ce66"
+    inactive-color="#ff4949">
+  </el-switch>
+<template>
+
+<script>
+  export default {
+    data() {
+      return {
+        value: true
+      }
+    }
+  };
+</script>
+```
+:::
+
+<h3>文字描述</h3>
+
+<ClientOnly>
+  <switch-demo-2 />
+</ClientOnly>
+
+> 使用 `active-text` 属性与 `inactive-text` 属性来设置开关的文字描述。
+
+::: details 点击查看代码
+```vue
+<template>
+  <el-switch
+    v-model="value"
+    active-color="#13ce66"
+    inactive-color="#ff4949">
+  </el-switch>
+<template>
+
+<script>
+  export default {
+    data() {
+      return {
+        value: true
+      }
+    }
+  };
+</script>
+```
+:::
+
+<h3>禁用状态</h3>
+
+<ClientOnly>
+  <switch-demo-3 />
+</ClientOnly>
+
+> 设置 `disabled` 属性，接受一个 `Boolean`，设置 `true` 即可禁用。
+
+::: details 点击查看代码
+```vue
+<template>
+  <el-switch
+    v-model="value1"
+    disabled>
+  </el-switch>
+  <el-switch
+    v-model="value2"
+    disabled>
+  </el-switch>
+<template>
+
+<script>
+  export default {
+    data() {
+      return {
+        value1: true
+        value2: false
+      }
+    }
+  };
+</script>
+```
+:::
+
+
 ## Form 表单
