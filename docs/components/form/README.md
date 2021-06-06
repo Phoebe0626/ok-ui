@@ -306,7 +306,7 @@ export default {
 
 ## Checkbox 复选框
 
-<font size="2" color="#5e6d82">在一组备选项中进行多选</font>
+<font size="2" color="#5e6d82">在一组备选项中进行多选。</font>
 
 <h3>基础用法</h3>
 
@@ -443,6 +443,210 @@ export default {
 </table>
 
 ## Select 选择器
+
+<font size="2" color="#5e6d82">当选项过多时，使用下拉菜单展示并选择内容。</font>
+
+<h3>基础用法</h3>
+
+<font size="2" color="#5e6d82">适用广泛的基础单选</font>
+
+<ClientOnly>
+  <select-demo-1 />
+</ClientOnly>
+
+> `v-model` 的值为当前被选中的 `el-option` 的 value 属性值
+
+::: details 点击查看代码
+```vue
+<template>
+  <o-select v-model="value" placeholder="请选择">
+    <o-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </o-option>
+  </o-select>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: ''
+      }
+    }
+  }
+</script>
+```
+:::
+
+<h3>有禁用选项</h3>
+
+<font size="2" color="#5e6d82">适用广泛的基础单选</font>
+
+<ClientOnly>
+  <select-demo-2 />
+</ClientOnly>
+
+> 在 `el-option` 中，设定 `disabled` 值为 `true`，即可禁用该选项
+
+::: details 点击查看代码
+```vue
+<template>
+  <o-select v-model="value" placeholder="请选择">
+    <o-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value"
+      :disabled="item.disabled">
+    </o-option>
+  </o-select>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶',
+          disabled: true
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: ''
+      }
+    }
+  }
+</script>
+```
+:::
+
+<h3>禁用状态</h3>
+
+<font size="2" color="#5e6d82">选择器不可用状态</font>
+
+<ClientOnly>
+  <select-demo-3 />
+</ClientOnly>
+
+> 为 `o-select` 设置 `disabled` 属性，则整个选择器不可用
+
+::: details 点击查看代码
+```vue
+<template>
+  <o-select v-model="value" placeholder="请选择" disabled>
+    <o-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value"
+      :disabled="item.disabled">
+    </o-option>
+  </o-select>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶',
+          disabled: true
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        value: ''
+      }
+    }
+  }
+</script>
+```
+:::
+
+<h3>Select Attributes</h3>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="20%">参数</th>
+      <th width="22%">说明</th>
+      <th>类型</th>
+      <th width="20%">可选值</th>
+      <th width="20%">默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>value / v-model</td>
+      <td>绑定值</td>
+      <td>string / number / boolean</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>select input 的 name 属性</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>placeholder</td>
+      <td>占位符</td>
+      <td>string</td>
+      <td>—</td>
+      <td>请选择</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## Switch 开关
 

@@ -32,6 +32,7 @@ export default {
   },
   methods: {
     handleOption () {
+      if(this.disabled) return
       // this.Select.value = this.value
       this.Select.$emit('input', this.value)
     }

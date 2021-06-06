@@ -154,7 +154,7 @@ export default {
 }
 
 .o-select-dropdown__wrapper {
-  position: relative;
+  position: absolute;
   min-width: 240px;
   transform-origin: center top;
   z-index: 2041;
