@@ -746,5 +746,70 @@ export default {
 ```
 :::
 
+<h3>Switch Attributes</h3>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="18%">参数</th>
+      <th width="24%">说明</th>
+      <th>类型</th>
+      <th width="20%">可选值</th>
+      <th width="20%">默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>value / v-model</td>
+      <td>绑定值</td>
+      <td>string / number / boolean</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>是否禁用</td>
+      <td>boolean</td>
+      <td>—</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>active-text</td>
+      <td>switch 打开时的文字描述</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>inactive-text</td>
+      <td>switch 关闭时的文字描述</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>active-color</td>
+      <td>switch 打开时的背景色</td>
+      <td>string</td>
+      <td>—</td>
+      <td>#409EFF</td>
+    </tr>
+    <tr>
+      <td>inactive-color</td>
+      <td>switch 关闭时的背景色</td>
+      <td>string</td>
+      <td>—</td>
+      <td>#C0CCDA</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>switch 对应的 name 属性</td>
+      <td>string</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## Form 表单
