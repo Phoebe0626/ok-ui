@@ -10,7 +10,7 @@
         v-for="(tab, index) in tabs"
         :key="index"
         :class="{'is-active': tab.name === value}"
-        @click="handleClick(tab.name)"
+        @click="handleClick(tab.name, tab.tab, $event)"
       >
         <span>{{ tab.label }}</span>
       </div>
@@ -60,7 +60,6 @@ export default {
       if (index > 0) {
         let offset = 0
         for (let i = 0; i < index; i++) {
-          console.log(index)
           offset += prevTabs[i].offsetWidth
         }
         this.barOffset = offset + 20
@@ -75,14 +74,16 @@ export default {
     getTabIndex (name) {
       return this.tabs.findIndex(item => item.name === name)
     },
-    handleClick (name) {
-      this.$emit('tab-click', name)
+    handleClick (name, tab, $event) {
+      this.$emit('input', name)
+      this.$emit('tab-click', tab, $event)
     },
     getTabs () {
       const AllPanes = this.$children.filter(item => item.$options.name === 'OTabPane')
       const TabPanes = []
       AllPanes.forEach(item => {
         TabPanes.push({
+          tab: item,
           label: item.label,
           name: item.name
         })
@@ -92,7 +93,10 @@ export default {
   },
   watch: {
     value (newVal) {
-      this.setLine(newVal)
+      console.log(newVal)
+      this.$nextTick(() => {
+        this.setLine(newVal)
+      })
     }
   }
 }

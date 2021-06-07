@@ -1,32 +1,22 @@
 <template>
-  <div id="app">
-    <o-button type="primary">确定</o-button>
-    <o-input v-model="input" clearable></o-input>
-    <o-checkbox v-model="checked1" disabled>备选项1</o-checkbox>
-    <o-checkbox v-model="checked2" disabled>备选项2</o-checkbox>
-    <o-select v-model="value">
-      <o-option label="区域一" value="beijing"></o-option>
-      <o-option label="区域二" value="shanghai"></o-option>
-    </o-select>
-  </div>
+  <o-tabs v-model="activeName" @tab-click="handleClick">
+    <o-tab-pane label="用户管理" name="first">用户管理</o-tab-pane>
+    <o-tab-pane label="配置管理" name="second">配置管理</o-tab-pane>
+    <o-tab-pane label="角色管理" name="third">角色管理</o-tab-pane>
+    <o-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</o-tab-pane>
+  </o-tabs>
 </template>
-
 <script>
 export default {
-  name: 'App',
   data () {
     return {
-      value: '',
-      checked1: false,
-      checked2: true,
-      input: ''
+      activeName: 'second'
+    }
+  },
+  methods: {
+    handleClick (tab, event) {
+      console.log(tab, event)
     }
   }
 }
 </script>
-
-<style lang="scss">
-.o-input {
-  width: 180px;
-}
-</style>
